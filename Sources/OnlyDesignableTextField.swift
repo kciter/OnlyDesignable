@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 public class DesignableTextField: UITextField {
-    @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable public var placeholderColor: UIColor = UIColor.lightGrayColor() {
         didSet {
             guard let placeholder = placeholder else { return }
             attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: placeholderColor])

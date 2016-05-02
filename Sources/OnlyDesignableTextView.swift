@@ -64,7 +64,7 @@ public class DesignableTextView: UITextView {
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = UIColor.lightGrayColor() {
+    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
         didSet {
             layer.borderColor = borderColor.CGColor
         }

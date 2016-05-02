@@ -42,7 +42,7 @@ It is able to `UIView`, `UILabel`, `UIButton`, `UITextField`, `UITextView`, `UII
   ```
 
 * **Manually**
-  * To install manually the GlitchLabel in an app, just drag the `Sources/*.swift` file into your project.
+  * To install manually the `OnlyDesignable` in an app, just drag the `Sources/*.swift` file into your project.
 
 ## Usage
 1. Install `OnlyDesignable` to your project.

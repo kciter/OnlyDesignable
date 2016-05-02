@@ -198,6 +198,10 @@ It is able to `UIView`, `UILabel`, `UIButton`, `UITextField`, `UITextView`, `UII
   * Type: CGFloat
   * Default: 0
 
+## Reference
+* https://github.com/MengTo/Spring
+* http://stackoverflow.com/questions/1328638/placeholder-in-uitextview
+
 ## License
 The MIT License (MIT)
 

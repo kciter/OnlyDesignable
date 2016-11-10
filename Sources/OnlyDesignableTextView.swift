@@ -9,10 +9,10 @@
 import UIKit
 
 @IBDesignable
-public class DesignableTextView: UITextView {
-    private var placeholderLabel: UILabel?
+open class DesignableTextView: UITextView {
+    fileprivate var placeholderLabel: UILabel?
     
-    @IBInspectable public var placeholder: String = "" {
+    @IBInspectable open var placeholder: String = "" {
         didSet {
             guard placeholder == "" || text == "" else {
                 placeholderLabel?.removeFromSuperview()
@@ -30,7 +30,7 @@ public class DesignableTextView: UITextView {
 //            placeholderLabel.text = placeholder
             placeholderLabel.font = font
             placeholderLabel.textAlignment = textAlignment
-            placeholderLabel.lineBreakMode = .ByClipping
+            placeholderLabel.lineBreakMode = .byClipping
             
             guard let font = font else { return }
             
@@ -44,10 +44,10 @@ public class DesignableTextView: UITextView {
             placeholderLabel.attributedText = attributedString
             
             placeholderLabel.sizeToFit()
-            placeholderLabel.frame = CGRectMake(textContainer.lineFragmentPadding+textContainerInset.left,
-                                                textContainerInset.top,
-                                                bounds.size.width-textContainer.lineFragmentPadding-textContainerInset.right,
-                                                placeholderLabel.frame.size.height)
+            placeholderLabel.frame = CGRect(x: textContainer.lineFragmentPadding+textContainerInset.left,
+                                                y: textContainerInset.top,
+                                                width: bounds.size.width-textContainer.lineFragmentPadding-textContainerInset.right,
+                                                height: placeholderLabel.frame.size.height)
             placeholderLabel.frame.size.width -= placeholderLabel.frame.origin.x
             
             placeholderLabel.removeFromSuperview()
@@ -57,32 +57,32 @@ public class DesignableTextView: UITextView {
         }
     }
     
-    @IBInspectable public var placeholderColor: UIColor = UIColor.lightGrayColor() {
+    @IBInspectable open var placeholderColor: UIColor = UIColor.lightGray {
         didSet {
             placeholderLabel?.textColor = placeholderColor
             layoutSubviews()
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
-            layer.borderColor = borderColor.CGColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0 {
+    @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
     
-    @IBInspectable public var lineHeight: CGFloat = 1.5 {
+    @IBInspectable open var lineHeight: CGFloat = 1.5 {
         didSet {
             guard let font = font else { return }
             

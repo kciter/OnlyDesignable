@@ -9,8 +9,8 @@
 import UIKit
 
 @IBDesignable
-public class DesignableTextField: UITextField {
-    @IBInspectable public var placeholderColor: UIColor = UIColor.lightGrayColor() {
+open class DesignableTextField: UITextField {
+    @IBInspectable open var placeholderColor: UIColor = UIColor.lightGray {
         didSet {
             guard let placeholder = placeholder else { return }
             attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: placeholderColor])
@@ -18,37 +18,37 @@ public class DesignableTextField: UITextField {
         }
     }
     
-    @IBInspectable public var leftPadding: CGFloat = 0 {
+    @IBInspectable open var leftPadding: CGFloat = 0 {
         didSet {
-            let padding = UIView(frame: CGRectMake(0, 0, leftPadding, 0))
+            let padding = UIView(frame: CGRect(x: 0, y: 0, width: leftPadding, height: 0))
             
-            leftViewMode = UITextFieldViewMode.Always
+            leftViewMode = UITextFieldViewMode.always
             leftView = padding
         }
     }
     
-    @IBInspectable public var rightPadding: CGFloat = 0 {
+    @IBInspectable open var rightPadding: CGFloat = 0 {
         didSet {
-            let padding = UIView(frame: CGRectMake(0, 0, rightPadding, 0))
+            let padding = UIView(frame: CGRect(x: 0, y: 0, width: rightPadding, height: 0))
             
-            rightViewMode = UITextFieldViewMode.Always
+            rightViewMode = UITextFieldViewMode.always
             rightView = padding
         }
     }
     
-    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
-            layer.borderColor = borderColor.CGColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0 {
+    @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }

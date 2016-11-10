@@ -9,52 +9,52 @@
 import UIKit
 
 @IBDesignable
-public class DesignableLabel: UILabel {
-    private var strikeThroughLayer: CALayer?
+open class DesignableLabel: UILabel {
+    fileprivate var strikeThroughLayer: CALayer?
     
-    @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
-            layer.borderColor = borderColor.CGColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat = 0 {
+    @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
     
-    @IBInspectable public var strikeThrough: Bool = false {
+    @IBInspectable open var strikeThrough: Bool = false {
         didSet {
             if strikeThrough == true {
                 if strikeThroughLayer == nil {
                     strikeThroughLayer = CALayer()
                 }
                 
-                strikeThroughLayer?.backgroundColor = strikeThroughColor.CGColor
+                strikeThroughLayer?.backgroundColor = strikeThroughColor.cgColor
                 
-                guard let textSize = text?.sizeWithAttributes([NSFontAttributeName: font]) else {
+                guard let textSize = text?.size(attributes: [NSFontAttributeName: font]) else {
                     strikeThroughLayer?.removeFromSuperlayer()
                     return
                 }
                 
                 var x: CGFloat = 0.0
-                if textAlignment == .Center {
+                if textAlignment == .center {
                     x = bounds.size.width/2 - textSize.width/2
-                } else if textAlignment == .Right {
+                } else if textAlignment == .right {
                     x = bounds.size.width - textSize.width
                 }
                 
-                strikeThroughLayer?.frame = CGRectMake(x,
-                                                       bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
-                                                       textSize.width,
-                                                       strikeThroughThickness)
+                strikeThroughLayer?.frame = CGRect(x: x,
+                                                       y: bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
+                                                       width: textSize.width,
+                                                       height: strikeThroughThickness)
                 
                 strikeThroughLayer?.removeFromSuperlayer()
                 layer.addSublayer(strikeThroughLayer!)
@@ -66,53 +66,53 @@ public class DesignableLabel: UILabel {
         }
     }
     
-    @IBInspectable public var strikeThroughColor: UIColor = UIColor.blackColor() {
+    @IBInspectable open var strikeThroughColor: UIColor = UIColor.black {
         didSet {
             if strikeThroughLayer != nil {
-                strikeThroughLayer?.backgroundColor = strikeThroughColor.CGColor
+                strikeThroughLayer?.backgroundColor = strikeThroughColor.cgColor
                 layoutSubviews()
             }
         }
     }
     
-    @IBInspectable public var strikeThroughThickness: CGFloat = 1 {
+    @IBInspectable open var strikeThroughThickness: CGFloat = 1 {
         didSet {
-            guard let textSize = text?.sizeWithAttributes([NSFontAttributeName: font]) else {
+            guard let textSize = text?.size(attributes: [NSFontAttributeName: font]) else {
                 strikeThroughLayer?.removeFromSuperlayer()
                 return
             }
             
             var x: CGFloat = 0.0
-            if textAlignment == .Center {
+            if textAlignment == .center {
                 x = bounds.size.width/2 - textSize.width/2
-            } else if textAlignment == .Right {
+            } else if textAlignment == .right {
                 x = bounds.size.width - textSize.width
             }
             
-            strikeThroughLayer?.frame = CGRectMake(x,
-                                                   bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
-                                                   textSize.width,
-                                                   strikeThroughThickness)
+            strikeThroughLayer?.frame = CGRect(x: x,
+                                                   y: bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
+                                                   width: textSize.width,
+                                                   height: strikeThroughThickness)
             layoutSubviews()
         }
     }
     
-    @IBInspectable public var strikeThroughOffsetY: CGFloat = 0 {
+    @IBInspectable open var strikeThroughOffsetY: CGFloat = 0 {
         didSet {
-            guard let textSize = text?.sizeWithAttributes([NSFontAttributeName: font]) else {
+            guard let textSize = text?.size(attributes: [NSFontAttributeName: font]) else {
                 strikeThroughLayer?.removeFromSuperlayer()
                 return
             }
             
-            strikeThroughLayer?.frame = CGRectMake(0,
-                                                   bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
-                                                   textSize.width,
-                                                   strikeThroughThickness)
+            strikeThroughLayer?.frame = CGRect(x: 0,
+                                                   y: bounds.size.height/2-strikeThroughThickness/2+strikeThroughOffsetY,
+                                                   width: textSize.width,
+                                                   height: strikeThroughThickness)
             layoutSubviews()
         }
     }
 
-    @IBInspectable public var lineHeight: CGFloat = 1.5 {
+    @IBInspectable open var lineHeight: CGFloat = 1.5 {
         didSet {
             guard let font = font else { return }
             

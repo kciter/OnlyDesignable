@@ -6,8 +6,8 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Build Status](https://travis-ci.org/kciter/OnlyDesignable.svg?branch=master)](https://travis-ci.org/kciter/OnlyDesignable)
 
-Only **collection of designable view** for storyboard.<br>
-It is able to `UIView`, `UILabel`, `UIButton`, `UITextField`, `UITextView`, `UIImageView` designable.
+This is only **a collection of designable views** for storyboards.<br>
+It is able to make `UIView`, `UILabel`, `UIButton`, `UITextField`, `UITextView`, `UIImageView` designable.
 
 ## Preview
 <img src="https://github.com/kciter/OnlyDesignable/raw/master/Images/preview.png?raw=true" width='300' alt="preview">
@@ -197,6 +197,10 @@ It is able to `UIView`, `UILabel`, `UIButton`, `UITextField`, `UITextView`, `UII
 * `shadowOffsetY`:
   * Type: CGFloat
   * Default: 0
+
+## Reference
+* https://github.com/MengTo/Spring
+* http://stackoverflow.com/questions/1328638/placeholder-in-uitextview
 
 ## License
 The MIT License (MIT)

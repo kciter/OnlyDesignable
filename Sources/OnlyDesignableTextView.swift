@@ -12,6 +12,20 @@ import UIKit
 open class DesignableTextView: UITextView {
     fileprivate var placeholderLabel: UILabel?
     
+    override open func awakeFromNib(){
+        super.awakeFromNib()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DesignableTextView.textChanged), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    }
+    
+    deinit{
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func textChanged(notification:NSNotification){
+        placeholderLabel?.removeFromSuperview()
+    }
+    
     @IBInspectable open var placeholder: String = "" {
         didSet {
             guard placeholder == "" || text == "" else {

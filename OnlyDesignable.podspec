@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name	 	 = "OnlyDesignable"
-  s.version		 = "2.0.0"
+  s.version		 = "3.0.0"
   s.summary		 = "Only collection of designable view for storyboard"
   s.homepage	 = "https://github.com/kciter/OnlyDesignable"
   s.license		 = { :type => 'MIT', :file => 'LICENSE' }

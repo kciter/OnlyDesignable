@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode9
 script:
   - xctool -project 'OnlyDesignable.xcodeproj' -scheme 'OnlyDesignable' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
   - xctool -project './Sample/OnlyDesignable-Sample.xcodeproj' -scheme 'OnlyDesignable-Sample' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
